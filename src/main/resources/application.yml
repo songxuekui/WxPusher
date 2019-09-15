@@ -1,0 +1,40 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spring_boot?serverTimezone=GMT%2B8 #设置时区，不设置会报错
+    password: 123456
+    username: root
+
+  jpa:
+    database: mysql
+
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  main:
+    allow-bean-definition-overriding: true #允许重复定义bean对象（覆盖之前定义的）
+
+  devtools:
+    restart:
+      # 设置热更新
+      enabled: true
+      # 扫描路径，当路境内文件改变时自动重启
+      additional-paths: src/main/java
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+#     日志级别
+#      "OFF",
+#      "ERROR",
+#      "WARN",
+#      "INFO",
+#      "DEBUG",
+#      "TRACE"
+  path: .
+  file: log.log
